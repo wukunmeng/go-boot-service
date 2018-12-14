@@ -14,3 +14,6 @@ build/
 
 # project
 .idea/
+
+# File
+config/config.toml
