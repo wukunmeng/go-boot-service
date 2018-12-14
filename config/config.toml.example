@@ -1,0 +1,34 @@
+# server configuration
+
+# server
+[server]
+host = "127.0.0.1"
+port = 5092
+
+# database (MySQL Only)
+[database]
+uri = "user:user_password@(127.0.0.1:3306)/database_name?charset=utf8mb4&parseTime=True&loc=Local"
+max-conn = 100
+
+# redis
+#[redis]
+#addr = "127.0.0.1:6379"
+#password = ""
+#db = 0
+
+#[log]
+# Log level: info, debug, warn, error, fatal.
+#level = "info"
+
+# Rotate log by day
+#rotate = true
+
+# log file
+#file = "logs/server.log"
+
+# Max log file size in MB.
+# rotate by size
+#max-size = 500
+
+# Max log file keep days.
+max-days = 90
