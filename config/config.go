@@ -16,6 +16,7 @@ import (
     stdlog "log"
     "runtime/debug"
     "sync"
+    "github.com/wukunmeng/go-boot-service/log"
 )
 
 type config struct {
@@ -49,6 +50,8 @@ type config struct {
         StartTimeDelay int64 `toml:"start-time-delay"`
         EndTimeDelay int64 `toml:"end-time-delay"`
     }
+
+    Log *log.Log
 }
 
 var (
@@ -79,10 +82,10 @@ func Load(file string) {
     cfg.Redis.Db = 0
     cfg.Redis.PoolSize = 50
 
-    //cfg.Log.Level = "debug"
-    //cfg.Log.File = ""
-    //cfg.Log.MaxSize = 500 // MB
-    //cfg.Log.MaxDays = 90
+    cfg.Log.Level = "debug"
+    cfg.Log.File = ""
+    cfg.Log.MaxSize = 500 // MB
+    cfg.Log.MaxDays = 90
 
     cfg.Expiration.RedisActivityUser = 60
 
