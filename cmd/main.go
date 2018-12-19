@@ -16,6 +16,7 @@ import (
     "fmt"
     "github.com/wukunmeng/go-boot-service/version"
     "runtime"
+    "github.com/wukunmeng/go-boot-service/service"
 )
 
 const appName = "serverName"
@@ -52,4 +53,5 @@ func main()  {
 application name: %s  ver: %s
 
 `, appName, version.Build)
+service.Serve()
 }

@@ -52,7 +52,7 @@ type config struct {
         EndTimeDelay int64 `toml:"end-time-delay"`
     }
 
-    Log *log.Log
+    Log log.Log
 }
 
 var (
