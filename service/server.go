@@ -19,6 +19,7 @@ import (
     "go.uber.org/zap"
     "os"
     "net/http"
+    _ "net/http/pprof"
     "fmt"
     "time"
     "github.com/facebookgo/grace/gracehttp"
@@ -48,6 +49,13 @@ func Serve() {
     e.HTTPErrorHandler = httpErrorHandler
 
     router(e)
+
+    e.Group("/debug/*", func(handlerFunc echo.HandlerFunc) echo.HandlerFunc {
+        return func(context echo.Context) error {
+            http.DefaultServeMux.ServeHTTP(context.Response(), context.Request())
+            return nil
+        }
+    })
 
     server := &http.Server{
         Addr:        fmt.Sprintf("%s:%d", cfg.Server.Host, cfg.Server.Port),
