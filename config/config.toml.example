@@ -15,6 +15,7 @@ max-conn = 100
 #addr = "127.0.0.1:6379"
 #password = ""
 #db = 0
+#cache-prefix = ""
 
 #[log]
 # Log level: info, debug, warn, error, fatal.

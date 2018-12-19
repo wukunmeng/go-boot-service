@@ -7,6 +7,7 @@ require (
 	github.com/facebookgo/grace v0.0.0-20180706040059-75cf19382434 // indirect
 	github.com/facebookgo/httpdown v0.0.0-20180706035922-5979d39b15c2 // indirect
 	github.com/facebookgo/stats v0.0.0-20151006221625-1b76add642e4 // indirect
+	github.com/go-redis/redis v6.14.2+incompatible // indirect
 	github.com/labstack/echo v3.3.5+incompatible // indirect
 	github.com/labstack/gommon v0.2.8 // indirect
 	github.com/mattn/go-colorable v0.0.9 // indirect

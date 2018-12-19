@@ -35,6 +35,7 @@ type config struct {
         Password string `toml:"password"`
         Db       int    `toml:"db"`
         PoolSize int    `toml:"pool-size"`
+        CachePrefix string `toml:"cache-prefix"`
     }
 
     Host struct {

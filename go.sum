@@ -10,6 +10,8 @@ github.com/facebookgo/httpdown v0.0.0-20180706035922-5979d39b15c2 h1:nXeeRHmgNgj
 github.com/facebookgo/httpdown v0.0.0-20180706035922-5979d39b15c2/go.mod h1:TUV/fX3XrTtBQb5+ttSUJzcFgLNpILONFTKmBuk5RSw=
 github.com/facebookgo/stats v0.0.0-20151006221625-1b76add642e4 h1:0YtRCqIZs2+Tz49QuH6cJVw/IFqzo39gEqZ0iYLxD2M=
 github.com/facebookgo/stats v0.0.0-20151006221625-1b76add642e4/go.mod h1:vsJz7uE339KUCpBXx3JAJzSRH7Uk4iGGyJzR529qDIA=
+github.com/go-redis/redis v6.14.2+incompatible h1:UE9pLhzmWf+xHNmZsoccjXosPicuiNaInPgym8nzfg0=
+github.com/go-redis/redis v6.14.2+incompatible/go.mod h1:NAIEuMOZ/fxfXJIrKDQDz8wamY7mA7PouImQ2Jvg6kA=
 github.com/labstack/echo v3.3.5+incompatible h1:9PfxPUmasKzeJor9uQTaXLT6WUG/r+vSTmvXxvv3JO4=
 github.com/labstack/echo v3.3.5+incompatible/go.mod h1:0INS7j/VjnFxD4E2wkz67b8cVwCLbBmJyDaka6Cmk1s=
 github.com/labstack/gommon v0.2.8 h1:JvRqmeZcfrHC5u6uVleB4NxxNbzx6gpbJiQknDbKQu0=
