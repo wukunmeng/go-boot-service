@@ -52,6 +52,12 @@ func DB() *gorm.DB {
     return db
 }
 
+func CloseDB(){
+    if db != nil {
+        db.Close() //关闭数据库
+    }
+}
+
 var (
     re = regexp.MustCompile(`(?m)sql\s+.*?scope\.go\:\d+`)
 )

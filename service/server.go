@@ -25,6 +25,8 @@ import (
     "github.com/facebookgo/grace/gracehttp"
     "github.com/labstack/echo/middleware"
     "github.com/wukunmeng/go-boot-service/service/response"
+    "os/signal"
+    "syscall"
 )
 
 func Serve() {
@@ -42,6 +44,15 @@ func Serve() {
 
     Before()
     go BeforeAsync()
+
+    ch := make(chan os.Signal, 1)
+    signal.Notify(ch, syscall.SIGKILL, syscall.SIGSTOP)
+    go func() {
+        select {
+        case <- ch :
+            BeforeServerClosed()
+        }
+    }()
 
     e := echo.New()
     e.Use(middleware.Recover())
