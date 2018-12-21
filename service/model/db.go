@@ -37,6 +37,8 @@ func initDB() {
         logger.Fatal("open database fail", zap.Any("error", err))
     }
 
+    db.Callback().Query().Register("printTableName", dbPlugin)
+    db.Callback().Create().After("gorm:create").Register("afterCreateRecord", dbAfterCreatePlugin)
     sqlDB := db.DB()
     sqlDB.SetMaxOpenConns(cfg.MaxConn)
     sqlDB.SetMaxIdleConns(1)
@@ -72,4 +74,12 @@ func (lg *dbLog) Print(v ...interface{}) {
 
 func (lg *dbLog) tidySQLLog(log string) string {
     return re.ReplaceAllLiteralString(log, "sql")
+}
+
+func dbPlugin(scope *gorm.Scope)  {
+    fmt.Println(fmt.Sprintf("query %v", scope.TableName()))
+}
+
+func dbAfterCreatePlugin(scope *gorm.Scope)  {
+    fmt.Println(fmt.Sprintf("create %v", scope.TableName()))
 }
