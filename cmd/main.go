@@ -15,8 +15,10 @@ import (
     "flag"
     "fmt"
     "github.com/wukunmeng/go-boot-service/version"
+    z "github.com/wukunmeng/go-boot-service/log/zap"
     "runtime"
     "github.com/wukunmeng/go-boot-service/service"
+    "github.com/wukunmeng/go-boot-service/config"
 )
 
 const appName = "serverName"
@@ -39,6 +41,9 @@ func main()  {
         fmt.Println("  go version:", runtime.Version())
         return
     }
+
+    cfg := config.Get()
+    z.ConfigZap(cfg.Log)
 
     fmt.Printf(`
 :'######::::'#######::'##::::::::::'###::::'##::: ##::'######:::::::::::::'######::'########:'########::'##::::'##:'####::'######::'########:

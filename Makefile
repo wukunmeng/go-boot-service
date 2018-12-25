@@ -1,4 +1,4 @@
-CMD = sensitive-word-service
+CMD = go-boot-service
 TARGET = dist/$(CMD)
 GIT_TAG := $(shell (git describe --abbrev=0 --tags 2> /dev/null || echo v0.0.0) | head -n1)
 GIT_HASH := $(shell (git show-ref --head --hash=8 2> /dev/null || echo 00000000) | head -n1)
@@ -29,7 +29,7 @@ build:
 	# go build
 	go build -v -o $(TARGET)/$(CMD) \
 		-ldflags='-X "$(PKG_NAME)/version.Build=$(GIT_TAG)-$(GIT_HASH)" -X "$(PKG_NAME)/version.BuildTime=$(BUILD_TIME)"' \
-		./cmd/$(CMD)
+		./cmd
 
 .PHONY: test
 test:

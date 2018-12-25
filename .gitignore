@@ -15,6 +15,7 @@ logs/
 
 # project
 .idea/
+dist/
 
 # File
 config/config.toml

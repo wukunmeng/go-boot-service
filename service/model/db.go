@@ -22,6 +22,7 @@ import (
     "regexp"
     "strings"
     "fmt"
+    "github.com/wukunmeng/go-boot-service/log/sugar"
 )
 
 var (
@@ -36,7 +37,7 @@ func initDB() {
     if err != nil {
         logger.Fatal("open database fail", zap.Any("error", err))
     }
-
+    sugar.Infof("init database %s", cfg.URI)
     db.Callback().Query().Register("printTableName", dbPlugin)
     db.Callback().Create().After("gorm:create").Register("afterCreateRecord", dbAfterCreatePlugin)
     sqlDB := db.DB()
@@ -55,6 +56,8 @@ func DB() *gorm.DB {
 }
 
 func CloseDB(){
+    cfg := config.Get().Database
+    sugar.Infof("close db %s", cfg.URI)
     if db != nil {
         db.Close() //关闭数据库
     }
