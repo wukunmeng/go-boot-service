@@ -17,19 +17,19 @@ max-conn = 100
 #db = 0
 #cache-prefix = ""
 
-#[log]
+[log]
 # Log level: info, debug, warn, error, fatal.
-#level = "info"
+level = "info"
 
 # Rotate log by day
-#rotate = true
+rotate = true
 
 # log file
-#file = "logs/server.log"
+file = "logs/server.log"
 
 # Max log file size in MB.
 # rotate by size
-#max-size = 500
+max-size = 100
 
 # Max log file keep days.
 max-days = 90
